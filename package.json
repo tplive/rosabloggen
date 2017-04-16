@@ -1,0 +1,27 @@
+{
+  "name": "rosabloggen",
+  "version": "1.0.0",
+  "description": "Rosabloggen er en oppgave i faget IFT201 Webprogrammering",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tplive/rosabloggen.git"
+  },
+  "keywords": [
+    "blog",
+    "assignment",
+    "node",
+    "express",
+    "jade",
+    "nosql"
+  ],
+  "author": "Eline og Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tplive/rosabloggen/issues"
+  },
+  "homepage": "https://github.com/tplive/rosabloggen#readme"
+}
