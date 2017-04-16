@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/tplive/rosabloggen#readme",
   "devDependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "gulp": "^3.9.1"
   }
 }

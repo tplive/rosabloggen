@@ -1,1 +1,3 @@
-npm install --save-dev express
+# How to set up the app
+
+npm install --save-dev gulp express
