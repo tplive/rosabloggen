@@ -1,0 +1,7 @@
+{
+	"menypunkter": [
+		{"itemId": "about", "itemLink": "#", "itemAnchor":"Om Rosabloggen"},
+		{"itemId": "Admin", "itemLink": "/admin/","itemAnchor":"Login Admin"}
+
+	]
+}
