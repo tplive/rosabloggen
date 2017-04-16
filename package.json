@@ -26,6 +26,7 @@
   "homepage": "https://github.com/tplive/rosabloggen#readme",
   "devDependencies": {
     "express": "^4.15.2",
+    "express-session": "*",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.2.1",
