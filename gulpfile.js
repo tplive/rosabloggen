@@ -7,6 +7,7 @@ var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var session = require('express-session');
+var crypto = require('crypto');
 
 app.use(express.static(path.resolve('./build')));
 
