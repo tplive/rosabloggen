@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/tplive/rosabloggen/issues"
   },
-  "homepage": "https://github.com/tplive/rosabloggen#readme"
+  "homepage": "https://github.com/tplive/rosabloggen#readme",
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
 }
