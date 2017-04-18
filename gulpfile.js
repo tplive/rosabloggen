@@ -23,7 +23,7 @@ gulp.task('html', function() {
 	.pipe(jade({ 
 		pretty: true
 	}))
-	.pipe(gulp.dest('build'))
+	.pipe(gulp.dest('build'));
 	
 });
 
@@ -31,17 +31,17 @@ gulp.task('css', function() {
 	gulp.src(['css/*.css', 'sass/*.scss'])
 	.pipe(sass().on('error', sass.logError))
 	.pipe(concat('style.css'))
-	.pipe(gulp.dest('build/css'))
+	.pipe(gulp.dest('build/css'));
 });
 
 gulp.task('images', function() {
 	gulp.src('images/*')
-		.pipe(gulp.dest('build/images'))
+		.pipe(gulp.dest('build/images'));
 });
 
 gulp.task('js', function() {
 	gulp.src('js/**')
-	.pipe(gulp.dest('build/js'))
+	.pipe(gulp.dest('build/js'));
 });
 
 gulp.task('watch', ['build'], function() {
