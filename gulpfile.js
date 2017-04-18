@@ -6,6 +6,8 @@ var data = require('gulp-data');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+
 var session = require('express-session');
 var crypto = require('crypto');
 
@@ -13,6 +15,15 @@ app.use(express.static(path.resolve('./build')));
 
 app.listen('8080', function() {
 	console.log('Listening on port 8080');
+});
+
+var jsFiles = ['*.js']; // Add more subdirs later, in the form: 'src/**/*.js'];
+gulp.task('style', function() {
+	return gulp.src(jsFiles)
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish', {
+			verbose: true
+		}));
 });
 
 gulp.task('html', function() {
@@ -53,4 +64,4 @@ gulp.task('watch', ['build'], function() {
 
 });
 
-gulp.task('build', ['html', 'css', 'images', 'js']);
+gulp.task('build', ['style', 'html', 'css', 'images', 'js']);
