@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var express = require('express');
 var app = express();
 var path = require('path');
+
 var data = require('gulp-data');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
@@ -10,6 +11,13 @@ var jshint = require('gulp-jshint');
 
 var session = require('express-session');
 var crypto = require('crypto');
+
+// Connect to MongoDB Atlas
+var MongoClient = require('mongodb').MongoClient;
+var uri = 'mongodb://rosablogadmin:L4p&%3hW82e*@rosabloggen-shard-00-00-9evtt.mongodb.net:27017,rosabloggen-shard-00-01-9evtt.mongodb.net:27017,rosabloggen-shard-00-02-9evtt.mongodb.net:27017/rosabloggen?ssl=true&replicaSet=rosabloggen-shard-0&authSource=admin';
+MongoClient.connect(uri, function (err, db) {
+    db.close();
+});
 
 app.use(express.static(path.resolve('./build')));
 
