@@ -14,9 +14,38 @@ var crypto = require('crypto');
 
 // Connect to MongoDB Atlas
 var MongoClient = require('mongodb').MongoClient;
-var uri = 'mongodb://rosablogadmin:L4p&%3hW82e*@rosabloggen-shard-00-00-9evtt.mongodb.net:27017,rosabloggen-shard-00-01-9evtt.mongodb.net:27017,rosabloggen-shard-00-02-9evtt.mongodb.net:27017/rosabloggen?ssl=true&replicaSet=rosabloggen-shard-0&authSource=admin';
+// Passord med % feiler!
+var uri = 'mongodb://rosablogadmin:9C6N3UYxbZO6zHhg@rosabloggen-shard-00-00-9evtt.mongodb.net:27017,' +
+    'rosabloggen-shard-00-01-9evtt.mongodb.net:27017,' +
+    'rosabloggen-shard-00-02-9evtt.mongodb.net:27017/' +
+    'rosabloggen?ssl=true&replicaSet=rosabloggen-shard-0&authSource=admin';
 MongoClient.connect(uri, function (err, db) {
-    db.close();
+
+    db.open(function (err) {
+        if (err) {
+            console.log('There was an error' + err);
+            throw err;
+        }
+        db.collection('test_insert', function (err, collection) {
+            if (err) {
+                console.log('There was an error' + err);
+                throw err;
+            }
+            collection.insert(
+                {
+                    "title": "I like cake",
+                    "body": "It's quite good."
+                },
+                {safe: true},
+                function (err, documents) {
+                    if (err) throw err;
+                    console.log('Document ID is ' + documents[0]._id);
+                }
+            );
+
+            console.log('We are now able to perform queries.');
+        });
+    });
 });
 
 app.use(express.static(path.resolve('./build')));
